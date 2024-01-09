@@ -2,9 +2,10 @@ const left = document.getElementById('left-btn');
 const right = document.getElementById('right-btn');
 const slider = document.getElementById('slider');
 const slides = document.querySelectorAll('.slider-image')
-const slideShowLinks = document.querySelectorAll('.projects__link')
+const slideShowLinks = document.querySelectorAll('.projects__link');
+const infoWrapper = document.getElementById('wrapper');
+const descrBlock = document.querySelectorAll('.info__list');
 const bottom = document.getElementById('bottom')
-
 
 let currentSlideIndex = 0;
 const paginationCircle = [];
@@ -48,10 +49,12 @@ function removeActiveClass() {
 
 function showSlide() {
   slides[currentSlideIndex].classList.add('block');
+  descrBlock[currentSlideIndex].classList.add('grid');
 }
 
 function hideslide() {
   slides[currentSlideIndex].classList.remove('block');
+  descrBlock[currentSlideIndex].classList.remove('grid');
 }
 
 function changeSlide(slideIndex) {
